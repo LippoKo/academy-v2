@@ -58,3 +58,4 @@ If you want to learn more about building native executables, please consult http
 Easily start your REST Web Services
 
 [Related guide section...](https://quarkus.io/guides/getting-started-reactive#reactive-jax-rs-resources)
+1722605526# academy-v2
