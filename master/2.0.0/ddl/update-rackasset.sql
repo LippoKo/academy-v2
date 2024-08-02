@@ -1,0 +1,7 @@
+ALTER TABLE T_RACK_ASSET
+DROP
+CONSTRAINT t_rack_asset_rack_id_fkey;
+
+ALTER TABLE T_RACK_ASSET
+    ADD CONSTRAINT fk_rackasset_rack_id
+        FOREIGN KEY (RACK_ID) REFERENCES T_RACK (ID);
