@@ -33,4 +33,4 @@ jobs:
         with:
           dockerfile_path: src/main/docker/Dockerfile.jvm
           image_name: academy
-          tag_name: :$(date +%s)
+          tag_name: $(date +%s)
