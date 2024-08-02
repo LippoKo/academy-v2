@@ -1,8 +1,13 @@
 name: Build
 description: Build application with Maven
+inputs:
+  dockerfile_path:
+    description: "Path to the Dockerfile"
+    required: false
+    default: "Dockerfile"
 runs:
   using: composite
   steps:
     - name: Build with Maven
       run: mvn -B package -DskipTests --file pom.xml
-    - shell: bash
+      shell: bash
