@@ -1,5 +1,5 @@
 name: Build
-description: Build application with Maven and create a new Docker image
+description: Build application with Maven
 inputs:
   dockerfile_path:
     description: "Path to the Dockerfile"
