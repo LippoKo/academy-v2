@@ -42,3 +42,7 @@ jobs:
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
       - uses: LippoKo/academy-v2/.github/actions/docker_push@main
+        with:
+          docker_username: ${{ secrets.DOCKERHUB_USERNAME }}
+          image_name: $DOCKER_IMAGE_NAME:$TAG
+          tag_name: $TAG
