@@ -29,3 +29,4 @@ jobs:
       run: docker images | grep academy
 
     - uses: LippoKo/academy-v2/.github/actions/maven_build@main
+    - uses: LippoKo/academy-v2/.github/actions/docker_build@main
