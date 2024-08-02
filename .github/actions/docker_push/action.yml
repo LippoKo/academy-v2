@@ -7,12 +7,15 @@ inputs:
   image_name:
     description: "Name of the Docker image"
     required: true
+  tag_name:
+    description: "Name of the Docker image"
+    required: true
 runs:
   using: composite
   steps:
     - name: Tag Docker Image
-      run: docker tag ${{ inputs.image_name }} ${{ inputs.docker_username }}/${{ inputs.image_name }}
+      run: docker tag ${{ inputs.image_name }} ${{ inputs.docker_username }}/academy-actions:${{ inputs.tag_name }}
       shell: bash
     - name: Push Docker Image
-      run: docker push ${{ inputs.docker_username }}/${{ inputs.image_name }}
+      run: docker push ${{ inputs.docker_username }}/${{ inputs.image_name }}:${{ inputs.tag_name }}}
       shell: bash
