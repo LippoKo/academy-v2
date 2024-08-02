@@ -12,7 +12,6 @@ inputs:
   tag_name:
     description: "Name of the Docker image"
     required: false
-    default: $TAG
 runs:
   using: composite
   steps:
@@ -20,5 +19,5 @@ runs:
       run: docker tag ${{ inputs.image_name }} ${{ inputs.docker_username }}/academy-actions:${{ inputs.tag_name }}
       shell: bash
     - name: Push Docker Image
-      run: docker push ${{ inputs.docker_username }}/${{ inputs.image_name }}:${{ inputs.tag_name }}}
+      run: docker push ${{ inputs.docker_username }}/${{ inputs.image_name }}:${{ inputs.tag_name }}
       shell: bash
