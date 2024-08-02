@@ -1,0 +1,16 @@
+name: Build
+description: Build application with Maven
+inputs:
+  dockerfile_path:
+    description: "Path to the Dockerfile"
+    required: false
+    default: "Dockerfile"
+runs:
+  using: composite
+  steps:
+    - name: Build Docker Image
+      run: docker build . --file src/main/docker/Dockerfile.jvm --tag academy:$(date +%s)
+      shell: bash
+    - name: List Docker Images
+      run: docker images | grep academy
+      shell: bash
