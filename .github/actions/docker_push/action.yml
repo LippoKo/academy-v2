@@ -8,7 +8,7 @@ inputs:
   image_name:
     description: "Name of the Docker image"
     required: false
-    default: $DOCKER_IMAGE_NAME
+    default: $DOCKER_IMAGE_NAME:$TAG
   tag_name:
     description: "Name of the Docker image"
     required: false
