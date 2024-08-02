@@ -26,4 +26,4 @@ jobs:
       run: docker build . --file src/main/docker/Dockerfile.jvm --tag academy:$(date +%s)
 
     - name: List Docker Images
-      run: docker images
+      run: docker images | grep academy
