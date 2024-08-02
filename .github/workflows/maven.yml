@@ -44,5 +44,5 @@ jobs:
       - uses: LippoKo/academy-v2/.github/actions/docker_push@main
         with:
 #          docker_username: ${{ DOCKERHUB_USERNAME }}
-          image_name: $DOCKER_IMAGE_NAME
+#          image_name: $DOCKER_IMAGE_NAME
           tag_name: $TAG
