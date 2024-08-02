@@ -4,17 +4,20 @@ inputs:
   docker_username:
     description: "Docker Hub Username"
     required: true
+    default: "luizlima558"
   image_name:
     description: "Name of the Docker image"
-    required: true
+    required: false
+    default: $DOCKER_IMAGE_NAME
   tag_name:
     description: "Name of the Docker image"
-    required: true
+    required: false
+    default: $TAG
 runs:
   using: composite
   steps:
     - name: Tag Docker Image
-      run: docker tag ${{ inputs.docker_username }}/academy-actions:${{ inputs.tag_name }}
+      run: docker tag ${{ inputs.image_name }} ${{ inputs.docker_username }}/academy-actions:${{ inputs.tag_name }}
       shell: bash
     - name: Push Docker Image
       run: docker push ${{ inputs.docker_username }}/${{ inputs.image_name }}:${{ inputs.tag_name }}}
