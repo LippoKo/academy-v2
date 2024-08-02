@@ -1,16 +1,22 @@
 name: Build
-description: Build application with Maven
+description: Build application with Docker
 inputs:
   dockerfile_path:
-    description: "Path to the Dockerfile"
+    description: "src/main/docker/Dockerfile.jvm"
     required: false
     default: "Dockerfile"
+  image_name:
+    description: "academy"
+    required: true
+  tag_name:
+    description: "$(date +%s)"
+    required: true
 runs:
   using: composite
   steps:
     - name: Build Docker Image
-      run: docker build . --file src/main/docker/Dockerfile.jvm --tag academy:$(date +%s)
+      run: docker build . --file ${{ inputs.dockerfile_path }} --tag ${{ inputs.image_name }}:${{ inputs.tag_name }}
       shell: bash
     - name: List Docker Images
-      run: docker images | grep academy
+      run: docker images | grep ${{ inputs.image_name }}
       shell: bash
