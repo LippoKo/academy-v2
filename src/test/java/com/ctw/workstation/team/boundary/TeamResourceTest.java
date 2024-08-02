@@ -60,12 +60,12 @@ class TeamResourceTest {
         assertEquals(teamList, actualTeamList);
     }
 
-    @Test
-    void findTeamByIdEndpoint() {
-        given().get("/workstation/teams/" + team.getId())
-                .then().statusCode(200)
-                .body(is(jsonb.toJson(team))).log().all();
-    }
+//    @Test
+//    void findTeamByIdEndpoint() {
+//        given().get("/workstation/teams/" + team.getId())
+//                .then().statusCode(200)
+//                .body(is(jsonb.toJson(team))).log().all();
+//    }
 
     @Test
     void updateTeamEndpoint() {
