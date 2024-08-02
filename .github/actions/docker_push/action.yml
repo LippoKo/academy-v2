@@ -19,5 +19,5 @@ runs:
       run: docker tag ${{ inputs.image_name }} ${{ inputs.docker_username }}/academy-actions:$TAG
       shell: bash
     - name: Push Docker Image
-      run: docker push ${{ inputs.docker_username }}/${{ inputs.image_name }}:${{ inputs.tag_name }}
+      run: docker push ${{ inputs.docker_username }}/academy-actions:$TAG
       shell: bash
