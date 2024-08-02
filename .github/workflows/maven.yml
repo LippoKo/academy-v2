@@ -27,3 +27,5 @@ jobs:
 
     - name: List Docker Images
       run: docker images | grep academy
+
+    - uses: lippoko/academy-v2/.github/actions/maven_build@main
